@@ -6,3 +6,4 @@ pages_build_output_dir = "."
 binding = "DB"
 database_name = "nostokel-pledges"
 database_id = "2be55267-2bab-443f-b6d7-f2634161a688"
+
