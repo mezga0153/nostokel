@@ -31,6 +31,10 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Verify Cloudflare Turnstile
+  if (!env.TURNSTILE_SECRET) {
+    return Response.json({ error: 'Server misconfiguration: missing TURNSTILE_SECRET.' }, { status: 500 });
+  }
+
   const ip = request.headers.get('CF-Connecting-IP') || '';
   const verifyRes = await fetch(
     'https://challenges.cloudflare.com/turnstile/v0/siteverify',
@@ -47,7 +51,7 @@ export async function onRequestPost({ request, env }) {
   const verify = await verifyRes.json();
   if (!verify.success) {
     return Response.json(
-      { error: 'Robot check failed. Please refresh and try again.' },
+      { error: 'Robot check failed. Please refresh and try again.', codes: verify['error-codes'] },
       { status: 400 }
     );
   }
