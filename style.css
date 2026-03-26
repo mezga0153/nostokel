@@ -1,0 +1,287 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --warm: #f5ede0;
+  --accent: #c0392b;
+  --dark: #2c2c2c;
+  --mid: #5a5a5a;
+  --light: #fff9f4;
+  --border: #e0d4c4;
+  --bad: #7d2020;
+  --bad-bg: #fdf0f0;
+  --bad-border: #e8b4b4;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* ── HERO ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 48px;
+  background: var(--warm);
+  border-bottom: 2px solid var(--border);
+  text-align: center;
+}
+
+.hero img {
+  max-width: min(380px, 80vw);
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
+  margin-bottom: 36px;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.hero p.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--mid);
+  max-width: 520px;
+  font-style: italic;
+}
+
+/* ── MAIN ── */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+
+/* ── SECTION HEADING ── */
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.section-heading h2.bad {
+  color: var(--bad);
+}
+
+.section-heading h2.good {
+  color: var(--accent);
+}
+
+.section-heading p {
+  font-size: 1.05rem;
+  color: var(--mid);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── STOKEL SECTION ── */
+.stokel-section {
+  margin-bottom: 80px;
+}
+
+.stokel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.stokel-card {
+  background: var(--bad-bg);
+  border: 1px solid var(--bad-border);
+  border-top: 4px solid var(--bad);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stokel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(192,57,43,0.12);
+}
+
+.stokel-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.stokel-card h3 {
+  font-size: 1.05rem;
+  color: var(--bad);
+  margin-bottom: 8px;
+}
+
+.stokel-card p {
+  font-size: 0.97rem;
+  color: var(--mid);
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+  border: none;
+  border-top: 2px dashed var(--border);
+  margin: 0 0 72px;
+}
+
+/* ── FRIENDSHIP PILLARS ── */
+.friendship-section {
+  margin-bottom: 80px;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.pillar {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.pillar .icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.pillar h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pillar p {
+  font-size: 0.97rem;
+  color: var(--mid);
+}
+
+/* ── MANIFESTO ── */
+.manifesto {
+  background: var(--warm);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 36px 40px;
+  margin-bottom: 72px;
+}
+
+.manifesto h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.manifesto ol {
+  padding-left: 20px;
+}
+
+.manifesto ol li {
+  margin-bottom: 14px;
+  font-size: 1.03rem;
+  color: var(--dark);
+}
+
+/* ── PLEDGE ── */
+.pledge {
+  text-align: center;
+}
+
+.pledge h2 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.pledge p {
+  font-size: 1rem;
+  color: var(--mid);
+  margin-bottom: 28px;
+}
+
+.pledge-box {
+  display: inline-block;
+  background: #fff;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 28px 40px;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--dark);
+  max-width: 560px;
+  cursor: default;
+}
+
+.pledge-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 36px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.pledge-btn:hover {
+  background: #a93226;
+  transform: scale(1.03);
+}
+
+.pledge-btn:active {
+  transform: scale(0.98);
+}
+
+.pledge-msg {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #27ae60;
+  min-height: 1.5em;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.pledge-msg.show {
+  opacity: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 28px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: #aaa;
+  background: var(--warm);
+}
