@@ -13,6 +13,7 @@ A website for the **No Štokel** association, dedicated to promoting genuine, re
 - Making a friend feel personally targeted during a fair, shared accountability check
 - Judging how a friend lives when their choices are not yours to make
 - Talking about a friend behind their back
+- Reducing a woman to her body — treating her as an object rather than a full human being
 
 ## What Good Friendship Looks Like
 
@@ -25,6 +26,7 @@ The positive counterpart to every Štokel behaviour:
 - Speak directly — say what you mean, to someone's face
 - Accept, don't judge — share your view once, then let them be
 - What's said here, stays here — loyalty ends the conversation with you
+- Respect for women — her mind, her character, and her choices matter as much as anyone else's
 
 ## How It Works
 
