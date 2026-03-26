@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS pledges (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  name       TEXT NOT NULL,
+  message    TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

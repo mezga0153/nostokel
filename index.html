@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No Štokel — Association for Good Friendship</title>  <link rel="icon" type="image/x-icon" href="favicon.ico" />  <link rel="stylesheet" href="style.css" />
+  <title>No Štokel — Association for Good Friendship</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -57,7 +61,7 @@
           <span class="icon">🎯</span>
           <h3>Making a Friend Feel Targeted</h3>
           <p>
-            Stokel is reacting with anger or hurt the moment someone is
+            Štokel is reacting with anger or hurt the moment someone is
             checked — even when everyone else was checked too. It turns a
             fair, calm look at what went wrong into a personal attack,
             making honest accountability impossible.
@@ -68,7 +72,7 @@
           <span class="icon">🙄</span>
           <h3>Passive-Aggressive Blame</h3>
           <p>
-            Stokel is wrapping an attack in a smile — making an indirect jab
+            Štokel is wrapping an attack in a smile — making an indirect jab
             dressed up as an innocent observation, so the target can't even
             defend themselves. <em>"Well, if anything goes wrong, we all know
             who's to blame…"</em> — said with just enough deniability to escape
@@ -81,7 +85,7 @@
           <span class="icon">🧑‍⚖️</span>
           <h3>Judging How a Friend Lives</h3>
           <p>
-            Stokel is deciding that because a friend does something differently
+            Štokel is deciding that because a friend does something differently
             than you would, they are wrong — and making them feel it.
             Disapproval dressed up as concern is still disapproval.
             A friend's choices are theirs to make.
@@ -92,7 +96,7 @@
           <span class="icon">🤫💬</span>
           <h3>Talking Behind a Friend's Back</h3>
           <p>
-            Stokel is sharing a friend's business, mistakes, or private life
+            Štokel is sharing a friend's business, mistakes, or private life
             with people who have no part in it. What stays between friends
             stays between friends — full stop. Going behind someone's back
             destroys the very foundation of trust.
@@ -209,9 +213,31 @@
         "I pledge to be the kind of friend I would want to have —
         trustworthy, kind, and considerate of everyone around me."
       </div>
-      <br />
-      <button class="pledge-btn" onclick="takePledge()">I Take This Pledge</button>
-      <p class="pledge-msg" id="pledgeMsg">Welcome to No Štokel. The world needs more friends like you.</p>
+
+      <form class="pledge-form" id="pledgeForm" novalidate>
+        <div class="form-row">
+          <label for="pledgeName">Your name</label>
+          <input type="text" id="pledgeName" name="name" maxlength="100" placeholder="e.g. Ana" required />
+        </div>
+        <div class="form-row">
+          <label for="pledgeMessage">A short message <span class="optional">(optional)</span></label>
+          <textarea id="pledgeMessage" name="message" maxlength="500" rows="3" placeholder="Why does good friendship matter to you?"></textarea>
+        </div>
+        <!-- Cloudflare Turnstile robot check -->
+        <!-- Replace data-sitekey with your key from: dash.cloudflare.com → Turnstile → Create widget -->
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div>
+        <button class="pledge-btn" type="submit">I Take This Pledge</button>
+        <p class="pledge-feedback" id="pledgeFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- WALL OF PLEDGES -->
+    <section class="wall-section">
+      <h2>Who Has Pledged</h2>
+      <p class="wall-sub">These people have committed to being a good friend.</p>
+      <div class="wall" id="pledgeWall">
+        <p class="wall-empty">Loading pledges…</p>
+      </div>
     </section>
 
   </main>

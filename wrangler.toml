@@ -1,0 +1,8 @@
+name = "nostokel"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nostokel-pledges"
+database_id = "2be55267-2bab-443f-b6d7-f2634161a688"

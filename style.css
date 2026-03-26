@@ -276,6 +276,127 @@ main {
   opacity: 1;
 }
 
+/* ── PLEDGE FORM ── */
+.pledge-form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  color: var(--mid);
+}
+
+.form-row .optional {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  background: #fff;
+  color: var(--dark);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.pledge-feedback {
+  min-height: 1.5em;
+  font-size: 0.97rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pledge-feedback.success { color: #27ae60; }
+.pledge-feedback.error   { color: var(--accent); }
+
+/* ── WALL OF PLEDGES ── */
+.wall-section {
+  margin-top: 72px;
+  text-align: center;
+}
+
+.wall-section h2 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.wall-sub {
+  font-size: 1rem;
+  color: var(--mid);
+  margin-bottom: 28px;
+}
+
+.wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.wall-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.wall-card .pledger-name {
+  font-weight: bold;
+  color: var(--dark);
+  margin-bottom: 6px;
+  font-size: 0.97rem;
+}
+
+.wall-card .pledger-msg {
+  font-size: 0.9rem;
+  color: var(--mid);
+  font-style: italic;
+}
+
+.wall-card .pledger-date {
+  font-size: 0.78rem;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+.wall-empty {
+  color: var(--mid);
+  font-style: italic;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
 /* ── FOOTER ── */
 footer {
   text-align: center;
